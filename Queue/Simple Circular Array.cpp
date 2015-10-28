@@ -69,10 +69,12 @@ void printqueue(arrayqueue *q)
 	}
 	if (q->end<q->front)
 	{
-		for (int i = q->front; i <= q->end; i = (++i)%q->capacity)
+		int i;
+		for (i = q->front; i != q->end; i = (++i)%q->capacity)
 		{
 			cout << q->array[i] << endl;
 		}
+		cout << q->array[i] << endl;
 	}
 	else{
 		for (int i = q->front; i <= q->end; i++)
